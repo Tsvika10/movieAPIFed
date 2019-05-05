@@ -1,0 +1,19 @@
+.mat-card {
+    padding: 0;
+    margin: 2rem;
+    width: 20rem;
+}
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+mat-list-item.btn-container {
+    height: 3.8rem!important;
+}
+mat-list-item.mat-list-item {
+    padding: 0.7rem!important;
+    height: unset!important;
+    width: 100%!important;
+}

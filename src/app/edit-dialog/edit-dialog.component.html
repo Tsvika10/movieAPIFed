@@ -1,0 +1,29 @@
+<h1 mat-dialog-title><b>{{data.imdbID}}</b> - {{data.mode}} Movie</h1>
+<form [formGroup]="movieForm" mat-dialog-content>
+
+  <mat-form-field>
+    <input matInput placeholder="Title" formControlName="Title" [(ngModel)]="data.movie.Title">
+    <mat-error *ngIf="movieForm.get('Title').errors?.required">This field is required</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Year" formControlName="Year" [(ngModel)]="data.movie.Year">
+    <mat-error *ngIf="movieForm.get('Year').errors?.required">This field is required</mat-error>
+    <mat-error *ngIf="movieForm.get('Year').errors?.pattern">Not a valid year</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Runtime" formControlName="Runtime" [(ngModel)]="data.movie.Runtime">
+    <mat-error *ngIf="movieForm.get('Runtime').errors?.required">This field is required</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Genre" formControlName="Genre" [(ngModel)]="data.movie.Genre">
+    <mat-error *ngIf="movieForm.get('Genre').errors?.required">This field is required</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Director" formControlName="Director" [(ngModel)]="data.movie.Director">
+    <mat-error *ngIf="movieForm.get('Director').errors?.required">This field is required</mat-error>
+  </mat-form-field>
+</form>
+<div mat-dialog-actions>
+  <button mat-button [disabled]="!movieForm.valid" [mat-dialog-close]="data.movie" cdkFocusInitial>Save</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+</div>

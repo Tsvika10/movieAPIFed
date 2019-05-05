@@ -1,0 +1,22 @@
+<div class="movies-container">
+  <mat-card *ngFor="let movie of movieList">
+    <mat-list>
+      <mat-list-item role="listitem">ID: {{ movie.imdbID }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Title: {{ movie.Title | capitalize}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Year: {{ movie.Year }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Runtime: {{ movie.Runtime }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Genre: {{ movie.Genre }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem">Director: {{ movie.Director }}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem" class="btn-container">
+        <button mat-raised-button color="accent" (click)="onEdit(movie.imdbID)">Edit</button>
+        <button mat-raised-button color="alert" (click)="onDelete(movie.imdbID)">Delete</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>
